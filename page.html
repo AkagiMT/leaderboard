@@ -8,10 +8,45 @@
 </head>
 </head>
 <body>
+    <!-- 
+        gaols:
+        menu button to change from normal to editorial screen
+        menu element text should be changeable
+
+        adding, deleting, editing teams with json
+        editing team data by pressing on line of team
+
+        changable size for the container
+        on editorial menu next to score extra field for score which on press (one button for all teams)
+        score history with change score (array per team element)
+        dynamic leaderboard (get json, order, recreate table with num on idx)
+
+        add ability for grid view
+
+
+    -->
+
+    <menu> <!-- style="display: none;" once finished will appear on click of h1-->
+        <button>a</button>
+        <button>b</button>
+        <button>c</button>
+    </menu>
     
-    
-    
-    
+    <!-- title+ button the goal is to make the page one empty thing with hidden options -->
+    <h1>title + button</h1>
+
+    <div id="container">
+
+        <div class="team">
+            <p class="teamPosition">order by score</p>
+            <div class="team info">
+                <p class="name">team name</p>
+                <p class="score">teamscore</p>
+            </div>
+        </div>
+
+        
+    </div>
     
     <script src="logic.js"></script>
 </body>
