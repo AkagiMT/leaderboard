@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/css/styles.css" />
+  <title>Leaderboard</title>
+</head>
+
+
+
+    <!-- 
+        gaols:
+        menu button to change from normal to editorial screen
+        menu element text should be changeable
+
+        adding, deleting, editing teams with json
+        editing team data by pressing on line of team
+
+        changable size for the container
+        on editorial menu next to score extra field for score which on press (one button for all teams)
+        score history with change score (array per team element)
+        dynamic leaderboard (get json, order, recreate table with num on idx)
+
+        add ability for grid view
+
+
+    -->
+
+<!-- style="display: none;" once finished will appear on click of h1-->
+
+ <!-- title+ button the goal is to make the page one empty thing with hidden options -->
+<body>
+  <div id="menu", style="display: none;">
+    <form>
+      <input type="text", id="inputName">
+      <h3 id="addTeam">add team</h3>
+    </form>
+  </div>
+  <h1 id="menuButton">Отбори</h1>
+
+
+  <main>
+    <div id="teamShowcase">
+      <div class="teamcontainer">
+        <h2 class="placement">0</h2>
+        <div class="teamInfoBorder">
+          <h2 class="teamName">ungabunga</h2>
+          <h2 class="score">32</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+        <script src="./app.js"></script>
+</body>
+
+</html>
