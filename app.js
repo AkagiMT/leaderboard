@@ -12,7 +12,11 @@
 
 
 
+//height is set to % make it react with font (button cuz im lazy?)
 
+
+
+//height and font are spearate add buttons for each on menu
 
 
 
