@@ -35,8 +35,14 @@
 <body>
   <div id="menu", style="display: none;">
     <form>
-      <input type="text", id="inputName">
-      <h3 id="addTeam">add team</h3>
+      <input type="text", id="scoreHistory", class="inputMenuField", style="display: none;">
+      <div id="permanent">
+        <input type="text", id="inputName", class="inputMenuField">
+        <h3 id="addTeam">add team</h3>
+      </div>
+      <h3 id="present">present button</h3>
+      <h3 id="updateScoreButton">update score</h3>
+      <h3, style="display: none;">update history</h3,>
     </form>
   </div>
   <h1 id="menuButton">Отбори</h1>
@@ -44,13 +50,6 @@
 
   <main>
     <div id="teamShowcase">
-      <div class="teamcontainer">
-        <h2 class="placement">0</h2>
-        <div class="teamInfoBorder">
-          <h2 class="teamName">ungabunga</h2>
-          <h2 class="score">32</h2>
-        </div>
-      </div>
     </div>
   </main>
         <script src="./app.js"></script>

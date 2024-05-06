@@ -1,5 +1,6 @@
-html{
-  background-image: url("/styles/images/background.jpg");
+ html{
+  background-image: url("/styles/images/background.png");
+  background-size: cover;
   font-weight: bold;
   font-family:sans-serif;
   color: white;
@@ -24,7 +25,7 @@ body{
   width: 1200px;
   height: 600px;
   margin: 0 auto;
-  border: 3px solid white;
+  border: 3px solid rgba(239, 239, 239, 0.8);
   border-radius: 1em;
   display: flex;
   flex-direction: column;
@@ -42,10 +43,13 @@ body{
   width: 80%;
   height: 50%;
   padding-left: 1em;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .teamInfoBorder{
-  border: 3px solid white;
+  border: 3px solid rgba(239, 239, 239, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   padding-left:1em ;
   padding-right: 1em;
@@ -63,6 +67,50 @@ body{
 }
 
 .score{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#menu{
+  margin-top: 1em;
+  display:  flex;
+  width: 100%;
+  text-align: center;
+}
+
+#permanent{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 5em;
+}
+
+.scoreUpdater{
+  max-width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(239, 239, 239, 0.7);
+  border-radius: 1em;
+  color: white;
+  padding: 1%;
+  margin-left: 1em;
+  text-align: center;
+}
+
+.inputMenuField{
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(239, 239, 239, 0.7);
+  border-radius: 1em;
+  color: white;
+  text-align: center;
+}
+
+.editTeam{
+  margin-left: 1em;
+}
+
+.actionBar{
   padding: 0;
   margin: 0;
 }
