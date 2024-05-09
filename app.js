@@ -7,25 +7,6 @@
 
 // functionality:
 // 1. edit team button make it be interchange-able with add team
-// 2. update score
-
-
-
-// critial points:
-// 1. apply changes to objects
-// 2. make the fade-ins
-
-
-// current focus ("current"):
-// 1. learn to loop html 
-//(example: update score for every team. tab on team ele. on update all click loop over ele update  js select on id and refresh)
-
-
-
-
-// update focus
-// 1. figure out how to update score
-// 2. how to do the fade
 
 
 //startup
@@ -58,6 +39,9 @@ teams.push(team3);
 
 
 function logic() {
+    let presentButtonElement = document.body;
+    let positionPresented = 0;
+    let setupPresentButton = document.getElementById('present');
     let menuButtonElement = document.getElementById('menuButton');
     let inputFieldElement = document.getElementById('inputName');
     let addTeamButtonElement = document.getElementById('addTeam');
@@ -73,6 +57,7 @@ function logic() {
         for (let team of teams){
             team.score = team.history.reduce((sum, a)=> sum + a, 0);
         };
+
         ///sort by score
         teams.sort((a, b) => b.score - a.score);
         ///postion for rankings
@@ -93,6 +78,8 @@ function logic() {
             teamNameElement.classList.add('teamName');
             let teamScoreElement = document.createElement('h2');
             teamScoreElement.classList.add('score');
+
+
             let actionContainerElement = document.createElement('div');
             actionContainerElement.classList.add('actionBar');
             let teamUpdaterElement = document.createElement('input');
@@ -127,13 +114,13 @@ function logic() {
         teams.push(newTeam);
         loadTeams();
     };
-
+    
     //makes menu + menu related elements visible
     function openMenu(){
         if(menuElement.style.display === 'none'){
-            menuElement.style.display = 'inline';
+            menuElement.style.display = 'flex';
             for(actionmenu of teamActionContainerElement){
-                actionmenu.style.display = 'inline'
+                actionmenu.style.display = 'flex'
             };
 
         } else {
@@ -143,6 +130,7 @@ function logic() {
             };
         };
     };
+
     function updateScore(){
         
         // Select all elements with class "teamcontainer"
@@ -166,12 +154,7 @@ function logic() {
         loadTeams();
 });
         };
-    menuButtonElement.addEventListener('click', openMenu);
-    addTeamButtonElement.addEventListener('click',addTeam);
-    updateScoreButtonElement.addEventListener('click',updateScore);
 
-    let presentButtonElement = document.body;
-    let positionPresented = 0
     function presentButton(){
         let teamstoShowcase = document.querySelectorAll('.teamcontainer');
         if(positionPresented === 0){
@@ -182,16 +165,22 @@ function logic() {
             positionPresented -= 1;
             teamstoShowcase[positionPresented].style.opacity = '1';
         } else{teamstoShowcase[positionPresented].style.opacity = '1';}
-    }
-    presentButtonElement.addEventListener('keypress',function(e){
-        if(e.key == 'n'){presentButton()};
-    });
-    let setupPresentButton = document.getElementById('present');
+    };
+
     function setupfades(){
         let teamstoShowcase = document.querySelectorAll('.teamcontainer');
         for (let team of teamstoShowcase){
             team.style.opacity = '0';
+            positionPresented = 0;
         };
-    }
+    };
+
+    presentButtonElement.addEventListener('keypress',function(e){
+        if(e.key == 'n'){presentButton(); console.log('a')};
+    });
+
+    menuButtonElement.addEventListener('click', openMenu);
+    addTeamButtonElement.addEventListener('click',addTeam);
+    updateScoreButtonElement.addEventListener('click',updateScore);
     setupPresentButton.addEventListener('click',setupfades);
 };
