@@ -1,4 +1,8 @@
- html{
+/* the format is repetetive for everything (color/border/border radius/background color/font color/alignment)
+   goal: streamline it for less repetition
+*/
+
+html{
   background-image: url("/styles/images/background.png");
   background-size: cover;
   font-weight: bold;
@@ -115,9 +119,9 @@ body{
 
 
 .scoreUpdater{
-  max-width: 50%;
+  max-width: 30%;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(239, 239, 239, 0.7);
+  border: 3px solid rgba(239, 239, 239, 0.7);
   border-radius: 1em;
   color: white;
   padding: 1%;
@@ -134,6 +138,7 @@ body{
   text-align: center;
   align-content: center;
   padding: 0 10% 0 10%;
+  max-width: 30%;
 }
 
 
@@ -150,4 +155,28 @@ body{
   border-radius: 1em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.editField{
+  border: 3px solid rgba(239, 239, 239, 0.7);
+  border-radius: 1em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0;
+  text-align: center;
+  align-content: center;
+  color: white;
+  max-width: 100%;
+}
+
+.deleteTeam{
+  border: 3px solid rgba(239, 239, 239, 0.7);
+  border-radius: 1em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 3em;
+  margin-left: 10px;
+  text-align: center;
+  align-content: center;
+  color: white;
 }

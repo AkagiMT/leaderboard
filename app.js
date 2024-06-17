@@ -1,13 +1,11 @@
 //to-do
 
-
 // visuals:
 // 1. make controls for team element height and font size (seperate on menu open for all team at once)
 // 2. make grid setup
 
 // functionality:
 // 1. edit team button make it be interchange-able with add team
-
 
 //startup
 window.addEventListener("load", logic);
@@ -19,24 +17,21 @@ class Team {
         this.id = Math.random();
     };
 };
-
+let teams = [];
 
 
 //testcase
-let team1 = new Team('unga');
-team1.score += 10
-let team2 = new Team('bunga');
-let team3 = new Team('bunga');
-team3.score += 30
-team2.score += 20
-let teams = [];
-teams.push(team1);
-teams.push(team2);
-teams.push(team3);
+//let team1 = new Team('unga');
+// team1.score += 10
+// let team2 = new Team('bunga');
+// let team3 = new Team('bunga');
+// team3.score += 30
+// team2.score += 20
+// teams.push(team1);
+// teams.push(team2);
+// teams.push(team3);
 
 //team unga / score 10 / score history []
-
-
 
 function logic() {
     let presentButtonElement = document.body;
@@ -79,7 +74,6 @@ function logic() {
             let teamScoreElement = document.createElement('h2');
             teamScoreElement.classList.add('score');
 
-
             let actionContainerElement = document.createElement('div');
             actionContainerElement.classList.add('actionBar');
             let teamUpdaterElement = document.createElement('input');
@@ -87,6 +81,12 @@ function logic() {
             let teamEditButton = document.createElement('h3');
             teamEditButton.classList.add('editTeam');
             teamEditButton.textContent = 'edit team';
+            let teamEditField = document.createElement('input')
+            teamEditField.classList.add('editField');
+            teamEditButton.appendChild(teamEditField)    
+            let teamDeleteButton = document.createElement('h3');
+            teamDeleteButton.classList.add('deleteTeam');
+            teamDeleteButton.textContent = 'Delete'
 
 
             position += 1;
@@ -101,8 +101,27 @@ function logic() {
             teamContainerElement.appendChild(teamInfoElement);
             actionContainerElement.appendChild(teamEditButton);
             actionContainerElement.appendChild(teamUpdaterElement);
+            actionContainerElement.appendChild(teamDeleteButton);
             teamContainerElement.appendChild(actionContainerElement);
             teamShowcaseElement.appendChild(teamContainerElement);
+
+            //delete button remove from js list and reload
+            teamDeleteButton.addEventListener('click',deleteTeam)
+            function deleteTeam(){
+                teams.splice(position-1,1);
+                loadTeams()
+            }
+            //checks for empty value and passes as new name if not empty
+            teamEditButton.addEventListener('click', editTeam)
+            function editTeam(){
+                if (teamEditField.value.trim() == ''){return};
+                team.name = teamEditField.value.trim()
+                teamEditField.value = ''
+                loadTeams()
+            }
+            teamEditField.addEventListener('keypress',function(e){
+                if(e.key =='Enter'){editTeam()}
+            })
         };
     };
 
@@ -118,7 +137,7 @@ function logic() {
     //makes menu + menu related elements visible
     function openMenu(){
         if(menuElement.style.display === 'none'){
-            menuElement.style.display = 'flex';
+            menuElement.style.display = 'flex   ';
             for(actionmenu of teamActionContainerElement){
                 actionmenu.style.display = 'flex'
             };
@@ -168,6 +187,7 @@ function logic() {
     };
 
     function setupfades(){
+        openMenu()
         let teamstoShowcase = document.querySelectorAll('.teamcontainer');
         for (let team of teamstoShowcase){
             team.style.opacity = '0';
@@ -181,6 +201,9 @@ function logic() {
 
     menuButtonElement.addEventListener('click', openMenu);
     addTeamButtonElement.addEventListener('click',addTeam);
+    inputFieldElement.addEventListener('keypress',function(e){
+        if (e.key == 'Enter'){addTeam()}
+    })
     updateScoreButtonElement.addEventListener('click',updateScore);
     setupPresentButton.addEventListener('click',setupfades);
 };
