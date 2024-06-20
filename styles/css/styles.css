@@ -22,6 +22,13 @@ body{
   margin-top: 0;
 }
 
+#addTeam,.inputMenuField,.scoreUpdater,.editTeam,#updateScoreButton,#present,.editField,.deleteTeam {
+  border: 3px solid rgba(239, 239, 239, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  text-align: center;
+}
+
 #teamShowcase {
   align-items: center;
   padding-top: 1em;
@@ -40,6 +47,7 @@ body{
 .placement{
   min-width: 1.5em;
 }
+
 .teamcontainer{
   display: flex;
   justify-content: space-between;
@@ -54,11 +62,11 @@ body{
 .teamInfoBorder{
   border: 3px solid rgba(239, 239, 239, 0.7);
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
   display: flex;
   padding-left:1em ;
   padding-right: 1em;
   width:90%;
-  border-radius: 1em;
   align-items: center;
   justify-content: space-between;
   height: 80%;
@@ -75,8 +83,6 @@ body{
   margin: 0;
 }
 
-
-
 #menu{
   margin-top: 1em;
   display:  flex;
@@ -84,14 +90,12 @@ body{
   text-align: center;
   justify-content: center;
 }
+
 #addTeam{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
   margin: 0;
   padding: 1em;
 }
+
 #permanent{
   display: flex;
   text-align: center;
@@ -100,14 +104,8 @@ body{
 }
 
 .inputMenuField{
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
   color: white;
-  text-align: center;
 }
-
-
 
 .actionBar{
   padding: 0;
@@ -117,23 +115,14 @@ body{
   height: 80%;
 }
 
-
 .scoreUpdater{
   max-width: 30%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
   color: white;
   padding: 1%;
   margin-left: 1em;
-  text-align: center;
 }
 
 .editTeam{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
   margin: 0;
   text-align: center;
   align-content: center;
@@ -141,27 +130,7 @@ body{
   max-width: 30%;
 }
 
-
-#updateScoreButton{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-#present{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 .editField{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
   margin: 0;
   text-align: center;
   align-content: center;
@@ -170,10 +139,6 @@ body{
 }
 
 .deleteTeam{
-  border: 3px solid rgba(239, 239, 239, 0.7);
-  border-radius: 1em;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
   width: 3em;
   margin-left: 10px;
   text-align: center;
